@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import  './css/home.css'; 
 import  './css/footer.css'; 
 import  './css/header.css'; 
@@ -12,7 +12,7 @@ import './css/quiz.css';
 import './css/speaking.css';
 import './css/listen.css';
 import "toastr/build/toastr.min.css";
-
+import "./css/paypal.css"
 // import './App.css';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import WebsiteLayout from './pages/layouts/WebsiteLayout';
@@ -57,11 +57,19 @@ import ListAnswerQuiz from './pages/admin/answerQuiz/ListAnswerQuiz';
 import FormAnswerQuiz from './pages/admin/answerQuiz/FormAnswerQuiz';
 import ListUserQuiz from './pages/admin/userQuiz/ListUserQuiz';
 import FormUserQuiz from './pages/admin/userQuiz/FormUserQuiz';
-
+import CheckoutPaypal from './pages/CheckoutPaypal';
+import Success from './pages/paymentConfirm/success';
+import Error from './pages/paymentConfirm/error';
+import ChangeColorBG from './Component/ChangeColorBG';
 
 function App() {
+  const [changeColor, setChangeColor] = useState(null);
+  const getColor = (color:any) => {
+    setChangeColor(color);
+  }
   return (
-    <div >
+    <div style={{background: `${changeColor}`}}>
+      <ChangeColorBG getColor={getColor} />
       <Routes>
         
         <Route path='/' element={<WebsiteLayout />}>
@@ -111,7 +119,9 @@ function App() {
           </Route>
 
         </Route>
-
+            <Route path='/payment' element={<CheckoutPaypal />} />
+            <Route path='/success' element={<Success />} />
+            <Route path='/cancle' element={<Error />} />
         <Route path='/login' element={<Login />}> </Route>
         <Route path='/register' element={<SignUp />}></Route>
         <Route path='/forgotPassword' element={<ForgotPassword />}></Route>
