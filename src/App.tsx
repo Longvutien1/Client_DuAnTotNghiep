@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { createContext, useState } from 'react';
 import  './css/home.css'; 
 import  './css/footer.css'; 
 import  './css/header.css'; 
@@ -13,7 +13,7 @@ import './css/speaking.css';
 import './css/listen.css';
 import "toastr/build/toastr.min.css";
 import "./css/paypal.css"
-// import './App.css';
+import './App.css';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import WebsiteLayout from './pages/layouts/WebsiteLayout';
 import Home from './pages/Home';
@@ -61,15 +61,17 @@ import CheckoutPaypal from './pages/CheckoutPaypal';
 import Success from './pages/paymentConfirm/success';
 import Error from './pages/paymentConfirm/error';
 import ChangeColorBG from './Component/ChangeColorBG';
+import ListWellcome from './pages/admin/wellCome/listWellcome';
+import ReactSwitch from 'react-switch';
+import { isTheme } from './utils/localStoreR';
 
+export const ThemeContext:any = createContext(null)
 function App() {
-  const [changeColor, setChangeColor] = useState(null);
-  const getColor = (color:any) => {
-    setChangeColor(color);
-  }
+  
+ const themeStore = isTheme();
   return (
-    <div style={{background: `${changeColor}`}}>
-      <ChangeColorBG getColor={getColor} />
+  
+    <div  id={themeStore}>
       <Routes>
         
         <Route path='/' element={<WebsiteLayout />}>
@@ -118,6 +120,9 @@ function App() {
             <Route path=':id/edit' element={<FormUserQuiz />} />
           </Route>
 
+          <Route path='wellcome'>
+            <Route index element={<ListWellcome />}/>
+          </Route>
         </Route>
             <Route path='/payment' element={<CheckoutPaypal />} />
             <Route path='/success' element={<Success />} />
