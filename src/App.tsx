@@ -64,6 +64,8 @@ import ChangeColorBG from './Component/ChangeColorBG';
 import ListWellcome from './pages/admin/wellCome/listWellcome';
 import ReactSwitch from 'react-switch';
 import { isTheme } from './utils/localStoreR';
+import ListVocabulary from './pages/admin/Vocabulary/ListVocabulary';
+import FormVocabulary from './pages/admin/Vocabulary/Form';
 
 export const ThemeContext:any = createContext(null)
 function App() {
@@ -71,7 +73,7 @@ function App() {
  const themeStore = isTheme();
   return (
   
-    <div  id={themeStore}>
+    <div >
       <Routes>
         
         <Route path='/' element={<WebsiteLayout />}>
@@ -122,6 +124,12 @@ function App() {
 
           <Route path='wellcome'>
             <Route index element={<ListWellcome />}/>
+          </Route>
+
+          <Route path='vocabulary'>
+            <Route index element={<ListVocabulary />} />
+            <Route path='add' element={<FormVocabulary />} />
+            <Route path=':id/edit' element={<FormVocabulary />} />
           </Route>
         </Route>
             <Route path='/payment' element={<CheckoutPaypal />} />
