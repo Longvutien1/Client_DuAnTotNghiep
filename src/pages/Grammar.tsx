@@ -27,7 +27,7 @@ console.log(grammar);
         <div className="main__topic col-span-7">
           <div className="desc__title__cocabulary">
             <h2>
-              Grammar / {grammar?.name}
+              GRAMMAR / {grammar?.name}
               <span className="text-lg text-[#A93226] font-bold"></span>
             </h2>
           </div>
