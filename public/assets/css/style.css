@@ -130,7 +130,6 @@ a:active {
     to(#6078ea)
   );
   background: linear-gradient(to right, #17ead9 0%, #6078ea 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$firstcolor, endColorstr=$secondcolor, GradientType=1 );
 }
 
 .probootstrap-header.probootstrap-header-no-intro {
@@ -586,6 +585,9 @@ a:active {
     margin-bottom: 0em;
   }
 }
+
+
+/* end header */
 
 .probootstrap-section.probootstrap-section-sm {
   padding: 3em 0;
@@ -1398,6 +1400,8 @@ a:active {
   top: 4px;
   width: 30px;
 }
+
+/* end header */
 
 /* Flexslider override style */
 .slider-height,

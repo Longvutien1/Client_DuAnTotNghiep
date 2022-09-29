@@ -47,7 +47,7 @@ const Login = (props: Props) => {
         console.log(payload);
         localStorage.setItem("user", JSON.stringify(payload))
         message.success('Login successfully !');
-        navigate("/")
+        // navigate("/")
 
       }
     } catch (error) {
@@ -69,7 +69,7 @@ const Login = (props: Props) => {
       localStorage.setItem("user", JSON.stringify({ id, name, email, image }));
     }).then(() => {
 
-      navigate("/");
+      // navigate("/");
     }).catch((error) => {
       console.log(error);
 
