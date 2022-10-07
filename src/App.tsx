@@ -61,6 +61,9 @@ import ExercisePage from './pages/ExercisePage';
 import SignIn from './pages/Login';
 import DetailLearningLayout from './pages/layouts/DetailLearningLayout';
 import SpeakingPage from './pages/speaking';
+import AddGrammar from './pages/admin/grammar/FormGrammar';
+import FormGrammar from './pages/admin/grammar/FormGrammar';
+import ListGrammar from './pages/admin/grammar/ListGrammar';
 
 function App() {
   return (
@@ -114,6 +117,7 @@ function App() {
             <Route path='add' element={<Add />} />
             <Route path='edit/:id' element={<Add />} />
           </Route>
+       
 
           <Route path="contact" >
             <Route index element={<ListContact />} />
@@ -146,6 +150,11 @@ function App() {
             <Route index element={<ListAnswerQuiz />} />
             <Route path='add' element={<FormAnswerQuiz />} />
             <Route path=':id/edit' element={<FormAnswerQuiz />} />
+          </Route>
+          <Route path="grammar" >
+            <Route index element={<ListGrammar />} />
+            <Route path='add' element={<FormGrammar />} />
+            <Route path=':id/edit' element={<FormGrammar />} />
           </Route>
 
           <Route path="userQuiz" >

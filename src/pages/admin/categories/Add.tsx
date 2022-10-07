@@ -55,17 +55,17 @@ const Add = () => {
             detail: values.category.detail
           }
         ))
-        
+
         toas.success("Add successfully");
-          setTimeout(() => {
-            navigate('/admin/category')
-         }, 1000); 
-       
+        setTimeout(() => {
+          navigate('/admin/category')
+        }, 1000);
+
       }
-    } catch (error:any) {
+    } catch (error: any) {
       toas.error(error.response.data);
     }
-  
+
   };
 
   return (
@@ -87,11 +87,11 @@ const Add = () => {
         <Input.TextArea />
       </Form.Item>
 
-        <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 2 }}>
-          <Button type="primary" htmlType="submit">
-            Submit
-          </Button>
-        </Form.Item>
+      <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 2 }}>
+        <Button type="primary" htmlType="submit">
+          Submit
+        </Button>
+      </Form.Item>
     </Form>
   )
 }

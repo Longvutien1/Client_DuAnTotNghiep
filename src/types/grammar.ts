@@ -1,9 +1,9 @@
-export type GammarType = {
+export type GrammarType = {
     _id?:string,
-    name:string,
-    iamge:string,
-    example:string,
-    note?: string,
+    title:string,
+    // iamge:string,
+    // example:string,
+    // note?: string,
     createdAt:string,
     updatedAt:string,
 }
