@@ -10,7 +10,7 @@ import Learning from './pages/Learning';
 import DetailLearning from './pages/DetailLearning';
 import FileUser from './pages/FileUser';
 import SignUp from './pages/SignUp';
-import ExeWriteAndListen from './pages/ExeWriteAndListen';
+import ExeWriteAndListen from './containers/Conversation/ExeWriteAndListen';
 import Login from './pages/Login';
 import ListUser from './pages/admin/Auth/listUser';
 import AddUser from './pages/admin/Auth/AddUser';
@@ -64,7 +64,18 @@ import SpeakingPage from './pages/speaking';
 import AddGrammar from './pages/admin/grammar/FormGrammar';
 import FormGrammar from './pages/admin/grammar/FormGrammar';
 import ListGrammar from './pages/admin/grammar/ListGrammar';
-
+import ExeListenAndRead from './containers/Conversation/ExeListenAndRead';
+import Note from './containers/Note';
+import QuestionAnswer from './containers/QuestionAnswer';
+import StartUp from './containers/Speak/StartUp';
+import LessonVocabulary from './containers/Vocabulary/LessonVocabulary';
+import ExerciseVocabulary from './containers/Vocabulary/ExerciseVocabulary';
+import LessonGrammar from './containers/Grammar/LessonGrammar';
+import ExerciseGrammar from './containers/Grammar/ExerciseGrammar';
+import Sentences from './pages/Sentences';
+import LessonSentences from './containers/Sentences/LessonSentences';
+import ExerciseSentences from './containers/Sentences/ExerciseSentences';
+import ExamSentences from './containers/Sentences/ExamSentences';
 function App() {
   return (
     <div >
@@ -77,12 +88,42 @@ function App() {
             <Route path="detailLearning">
               <Route index element={<DetailLearning />} />
               <Route path=':id' element={<DetailLearningLayout />}>
-                <Route path='speak' element={<SpeakingPage />} />
-                <Route path='vocabulary' element={<Vocabulary />} />
-                <Route path='grammar' element={<Grammar />} />
-                <Route path='conversation' element={<ConversationPage />} />
+
+                <Route path='speak' element={<SpeakingPage />}>
+                  <Route path='startUp' element={<StartUp />} />
+                  <Route path='questionAndAnswer' element={<QuestionAnswer />} />
+                </Route>
+
+                <Route path='vocabulary' element={<Vocabulary />}>
+                  <Route path='lesson' element={<LessonVocabulary />} />
+                  <Route path='exercise' element={<ExerciseVocabulary />} />
+                  <Route path='note' element={<Note />} />
+                  <Route path='questionAndAnswer' element={<QuestionAnswer />} />
+                </Route>
+
+                <Route path='sentences' element={<Sentences />}>
+                  <Route path='lesson' element={<LessonSentences />} />
+                  <Route path='exercise' element={<ExerciseSentences />} />
+                  <Route path='exam' element={<ExamSentences />} />
+                  <Route path='note' element={<Note />} />
+                  <Route path='questionAndAnswer' element={<QuestionAnswer />} />
+                </Route>
+
+                <Route path='conversation' element={<ConversationPage />}>
+                  <Route path='listenWrite' element={<ExeWriteAndListen />} />
+                  <Route path='listenRead' element={<ExeListenAndRead />} />
+                  <Route path='note' element={<Note />} />
+                  <Route path='questionAndAnswer' element={<QuestionAnswer />} />
+                </Route>
+
+                <Route path='grammar' element={<Grammar />}>
+                  <Route path='lesson' element={<LessonGrammar />} />
+                  <Route path='exercise' element={<ExerciseGrammar />} />
+                  <Route path='note' element={<Note />} />
+                  <Route path='questionAndAnswer' element={<QuestionAnswer />} />
+                </Route>
+
                 <Route path='exercise' element={<ExercisePage />} />
-                <Route path='writeAndListen' element={<ExeWriteAndListen />} />
               </Route>
             </Route>
           </Route>
