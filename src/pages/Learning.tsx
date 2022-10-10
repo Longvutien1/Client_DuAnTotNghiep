@@ -26,7 +26,7 @@ const item = [
 ]
 
 const people = [
-  { name: 'Lindsay Walton', title: 'Front-end Developer', email: 'lindsay.walton@example.com', role: 'Member' },
+  { noidung: 'Từ vựng', chinhthuc: '150 từ', trongcau	: '300 từ	', tongcong: '450' },
 ]
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -259,39 +259,35 @@ const Learning = () => {
                     scope="col"
                     className="py-3 pl-4 pr-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500 sm:pl-6"
                   >
-                    Name
+                    Nội dung
                   </th>
                   <th
                     scope="col"
                     className="px-3 py-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500"
                   >
-                    Title
+                    Chính thức	
                   </th>
                   <th
                     scope="col"
                     className="px-3 py-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500"
                   >
-                    Email
+                    Trong câu	
                   </th>
                   <th
                     scope="col"
                     className="px-3 py-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500"
                   >
-                    Role
+                    Tổng cộng
                   </th>
-
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200 bg-white">
                 {people.map((person) => (
-                  <tr key={person.email}>
-                    <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
-                      {person.name}
-                    </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.title}</td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.email}</td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.role}</td>
-
+                  <tr key={person.noidung}>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.noidung}</td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.chinhthuc}</td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.trongcau}</td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.tongcong}</td>
                   </tr>
                 ))}
               </tbody>
