@@ -1,5 +1,12 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import AnswerQuizSlide from '../features/Slide/answerQuiz/AnswerQuizSlide';
+import { ThunkMiddleware } from 'redux-thunk';
+import { configureStore, ThunkAction, Action, getDefaultMiddleware } from "@reduxjs/toolkit";
+import {
+  persistReducer,
+   persistStore
+ 
+ } from "redux-persist";
+ import storage from "redux-persist/lib/storage";
+import rootReducer from "./rootReducer";
 import authSlide from '../features/Slide/auth/authSlide';
 import CategorySlide from '../features/Slide/category/CategorySlide';
 import CountSlide from '../features/Slide/count/CountSlide';
@@ -14,9 +21,15 @@ import CommentSlice from '../features/Slide/comment/CommentSlice';
 import TimeLimitCountdownSlice from '../features/Slide/timeLimitCountdown/timeLimitCountdown';
 import GrammarSlice from '../features/Slide/grammar/Grammar'
 
-// import categorySlide from '../features/category/CategorySlide';
-// import countSlide from '../features/count/CountSlide'
-// import productSlide from '../features/product/ProductSlide'
+const persistConfig = {
+  key: "root",
+  storage,
+  blacklist: [
+    // "user" // những state ko muốn lưu ở trên local thì cho vào đây, tên theo tên của slide
+  ],
+};
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
 export const store = configureStore({
   reducer:{
     count: CountSlide,
@@ -37,7 +50,9 @@ export const store = configureStore({
     // cart
     // user
   }
+  reducer: persistedReducer,
 });
+export default persistStore(store);
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
