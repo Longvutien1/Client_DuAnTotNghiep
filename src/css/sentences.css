@@ -17,7 +17,7 @@
     @apply text-cyan-700 text-3xl font-bold
 }
 .content__detail__sentences{
-    @apply px-3
+    @apply px-3 mt-5
 }
 
 .content__detail__main{
@@ -46,7 +46,7 @@
 }
 
 .structural__analysis__detail{
-    @apply mt-8
+    @apply mt-8 mb-3
 }
 .title__structural{
     @apply text-sm font-normal
@@ -59,4 +59,29 @@
 }
 .content__structural span{
     @apply font-bold
+}
+
+.btn__close__sentences{
+    @apply hover:text-white hover:bg-blue-600
+}
+.btn__close__sentences , .btn__pre__sentences , .btn__next__sentences{
+    @apply border border-blue-600 px-3 py-0 text-blue-500 mr-2
+}
+.btn__pre__sentences {
+    @apply hover:text-white hover:bg-blue-600
+}
+.btn__next__sentences{
+    @apply hover:text-white hover:bg-blue-600
+}
+.title__topic__sentence{
+    @apply text-lg text-[#99cc00]
+}
+.topic__sentence i{
+    @apply text-xs text-black
+}
+.topic__sentence p {
+    @apply mb-0
+}
+.phonetic__vn__sentence{ 
+    @apply ml-6
 }

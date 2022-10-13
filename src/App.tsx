@@ -76,6 +76,7 @@ import Sentences from './pages/Sentences';
 import LessonSentences from './containers/Sentences/LessonSentences';
 import ExerciseSentences from './containers/Sentences/ExerciseSentences';
 import ExamSentences from './containers/Sentences/ExamSentences';
+import DetailSentences from './containers/Sentences/DetailSentences';
 function App() {
   return (
     <div >
@@ -102,6 +103,7 @@ function App() {
                 </Route>
 
                 <Route path='sentences' element={<Sentences />}>
+                  <Route path='detail' element={<DetailSentences />} />
                   <Route path='lesson' element={<LessonSentences />} />
                   <Route path='exercise' element={<ExerciseSentences />} />
                   <Route path='exam' element={<ExamSentences />} />
