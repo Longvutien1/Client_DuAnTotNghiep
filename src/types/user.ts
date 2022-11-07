@@ -1,3 +1,4 @@
+
 export interface UserType {
     _id?: string,
     username: string,
@@ -7,7 +8,7 @@ export interface UserType {
     address?: string,
     img?: string,
     sex?: number,
-    role?: string , // chuyển thành number (toDo)
+    role?: string , 
     colorImage?:string,
     idFacebook?: string,
     idGoogle?: string

@@ -22,7 +22,7 @@ export const register = (user:any) => {
     return instance.post(url, user);
 }
 
-export const getListUser = () => {
+export const ListUser = () => {
     const url = "/users";
     return instance.get(url);
 }
@@ -38,7 +38,7 @@ export const addUser = (user:UserType) => {
 
 export const editUser = (user:UserType) => {
     const url = `/users/${user._id}`;
-    return instance.patch(url, user);
+    return instance.put(url, user);
 } 
 
 export const removeUser = (id:any) => {

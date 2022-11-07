@@ -56,7 +56,6 @@ import Grammar from './pages/Grammar';
 import ExerciseVocabAndGrammar from './pages/ExerciseVocabAndGrammar';
 import Dashboard from './pages/adminTeacher/adminClass/Dashboard';
 import AdminClassList from './pages/adminTeacher/adminClass/AdminClassList';
-
 import Vocabulary from './pages/Vocabulary';
 import ConversationPage from './pages/ConversationPage';
 import ExercisePage from './pages/ExercisePage';
@@ -77,6 +76,8 @@ import ExerciseSentences from './containers/Sentences/ExerciseSentences';
 import ExamSentences from './containers/Sentences/ExamSentences';
 import QuizTypeSelect from './components/quiz/QuizTypeSelect';
 import { PrivateRouteHomePage, PrivateRouteLearning } from './midlerware/PrivateRoute';
+import ListUserAgent from './pages/admin/userAgents/ListUserAgent';
+import EditUser from './pages/admin/Auth/EditUser';
 
 function App() {
   return (
@@ -180,6 +181,7 @@ function App() {
           <Route path="user" >
             <Route index element={<ListUser />} />
             <Route path='add' element={<AddUser />} />
+            {/* <Route path='edit/:id' element={<EditUser />} /> */}
           </Route>
 
           {/* quizz */}
@@ -201,7 +203,6 @@ function App() {
             <Route path=':id/edit' element={<FormUserQuiz />} />
           </Route>
 
-
           {/* listenWrite */}
           <Route path="listenWrite" >
             <Route index element={<ListListenWrite />} />
@@ -209,6 +210,12 @@ function App() {
             <Route path=':id/edit' element={<FormListenWrite />} />
           </Route>
 
+          <Route path="users-agent" >
+            <Route index element={<ListUserAgent />} />
+            {/* <Route path='add' element={<FormUserQuiz />} /> */}
+            {/* <Route path=':id/edit' element={<FormUserQuiz />} /> */}
+          </Route>
+          
         </Route>
 
         <Route path='/test' element={<TestPage />}> </Route>

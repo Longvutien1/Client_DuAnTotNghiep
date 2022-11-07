@@ -1,3 +1,4 @@
+import { TagIcon } from '@heroicons/react/20/solid'
 import { Button, Modal, Space, Table, Tag } from 'antd'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'

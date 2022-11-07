@@ -3,29 +3,30 @@
 import React from 'react'
 import '../css/footer.css'
 const navigation = {
-  solutions: [
-    { name: 'Marketing', href: '#' },
-    { name: 'Analytics', href: '#' },
-    { name: 'Commerce', href: '#' },
-    { name: 'Insights', href: '#' },
+  VianEnglish: [
+    { name: 'Trang chủ', href: '#' },
+    { name: 'Các Kỳ Thi', href: '#' },
+    { name: 'Học Tiếng anh', href: '#' },
+    { name: 'Dạy tiếng anh', href: '#' },
   ],
   support: [
-    { name: 'Pricing', href: '#' },
-    { name: 'Documentation', href: '#' },
-    { name: 'Guides', href: '#' },
-    { name: 'API Status', href: '#' },
+    { name: 'Trợ giúp', href: '#' },
+    { name: 'Tư vấn', href: '#' },
+    { name: 'Câu hỏi thường gặp ', href: '#' },
+    { name: '› Hướng dẫn đăng ký học', href: '#' },
   ],
   company: [
-    { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Partners', href: '#' },
+    { name: 'Lớp học tiếng Anh giao tiếp 360', href: '#' },
+    { name: '30 ngày làm quen với giao tiếp tiếng Anh', href: '#' },
+    { name: 'Chặng', href: '#' },
+    { name: 'Tuần', href: '#' },
+    { name: 'Ngày', href: '#' },
   ],
   legal: [
-    { name: 'Claim', href: '#' },
-    { name: 'Privacy', href: '#' },
-    { name: 'Terms', href: '#' },
+    { name: 'Từ vựng', href: '#' },
+    { name: 'Cấu trúc và câu', href: '#' },
+    { name: 'Hội thoại', href: '#' },
+    { name: 'Ngữ pháp', href: '#' },
   ],
   social: [
     {
@@ -93,7 +94,7 @@ const navigation = {
 }
 const Footer = () => {
   return (
-    <footer className="bg-indigo-600 text-white mt-16" aria-labelledby="footer-heading">
+    <footer className="bg-[#6078ea] text-white mt-16" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
@@ -120,9 +121,9 @@ const Footer = () => {
           <div className="mt-12 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-base font-medium text-orange-500">Solutions</h3>
+                <h3 className="text-base font-medium text-orange-500">Giới thiệu về VianEnglish </h3>
                 <ul role="list" className="mt-4 space-y-4">
-                  {navigation.solutions.map((item) => (
+                  {navigation.VianEnglish.map((item) => (
                     <li key={item.name}>
                       <a href={item.href} className="text-base text-white hover:text-orange-500">
                         {item.name}
@@ -132,7 +133,7 @@ const Footer = () => {
                 </ul>
               </div>
               <div className="mt-12 md:mt-0">
-                <h3 className="text-base font-medium text-orange-500">Support</h3>
+                <h3 className="text-base font-medium text-orange-500">Hỗ trợ chung</h3>
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.support.map((item) => (
                     <li key={item.name}>
@@ -146,7 +147,7 @@ const Footer = () => {
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-base font-medium text-orange-500">Company</h3>
+                <h3 className="text-base font-medium text-orange-500">Lớp học tiếng anh giao tiếp 360</h3>
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
@@ -158,7 +159,7 @@ const Footer = () => {
                 </ul>
               </div>
               <div className="mt-12 md:mt-0">
-                <h3 className="text-base font-medium text-orange-500">Legal</h3>
+                <h3 className="text-base font-medium text-orange-500">Làm quen với tiếng anh</h3>
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.legal.map((item) => (
                     <li key={item.name}>
@@ -174,7 +175,7 @@ const Footer = () => {
 
         </div>
         <div className="mt-12 border-t border-gray-200 pt-8">
-          <p className="text-base text-white xl:text-center">&copy; 2020 Your Company, Inc. All rights reserved.</p>
+          <p className="text-base text-white xl:text-center">&copy;© Copyright 2022 VianEnglish.com</p>
         </div>
       </div>
     </footer>

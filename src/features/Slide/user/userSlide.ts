@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { addUser, editUser, getListUser, getUserById, removeUser } from "../../../api/user";
+import { addUser, editUser, ListUser, getUserById, removeUser } from "../../../api/user";
 import { UserType } from "../../../types/user";
 
 export interface UserSlice {
@@ -11,18 +11,11 @@ export interface UserSlice {
 export const getUserList = createAsyncThunk(
   "user/getListUser",
   async () => {
-    const { data } = await getListUser();
+    const { data } = await ListUser();
     return data
   }
 )
 
-export const getUser = createAsyncThunk(
-  "user/getUserById",
-  async (id: string) => {
-    const { data } = await getUserById(id);
-    return data
-  }
-)
 
 export const addUserSlide = createAsyncThunk(
   "user/addUser",
@@ -47,6 +40,14 @@ export const removeUserSlide = createAsyncThunk(
     return data
   }
 )
+export const getUsersById = createAsyncThunk(
+  "user/getUserById",
+  async (id: string) => {
+    const { data } = await getUserById(id);
+    return data
+  }
+)
+
 
 const authSlide = createSlice({
   name: "user",
