@@ -12,8 +12,8 @@ const navigation = {
   support: [
     { name: 'Trợ giúp', href: '#' },
     { name: 'Tư vấn', href: '#' },
-    { name: 'Câu hỏi thường gặp ', href: '#' },
-    { name: 'Hướng dẫn đăng ký học', href: '#' },
+    { name: 'Câu hỏi thường gặp ', href: '#' } ,
+    { name: 'Hướng dẫn đăng ký học', href: '#' } ,
   ],
   company: [
     { name: 'Lớp học tiếng Anh giao tiếp 360', href: '#' },
