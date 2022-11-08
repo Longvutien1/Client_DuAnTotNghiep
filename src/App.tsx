@@ -11,8 +11,8 @@ import DetailLearning from './pages/DetailLearning';
 import FileUser from './pages/FileUser';
 import SignUp from './pages/SignUp';
 import ExeWriteAndListen from './containers/Conversation/ExeWriteAndListen';
-import ListUser from './pages/admin/Auth/listUser';
-import AddUser from './pages/admin/Auth/AddUser';
+// import ListUser from './pages/admin/Auth/listUser';
+// import AddUser from './pages/admin/Auth/AddUser';
 import Store from './pages/Store';
 import ForgotPassword from './components/user/ForgotPassword';
 import NewPassword from './components/user/NewPassword';
@@ -28,7 +28,6 @@ import ListUserQuiz from './pages/admin/quizz/userQuiz/ListUserQuiz';
 import FormUserQuiz from './pages/admin/quizz/userQuiz/FormUserQuiz';
 import FormListenWrite from './pages/admin/ListenWrite/listenWrite/FormListenWrite';
 import ListListenWrite from './pages/admin/ListenWrite/listenWrite/ListListenWrite';
-
 // import TeacherPage from './pages/teacher/TeacherPage';
 // import ManageTeacher from './pages/teacher/ManagementTeacher';
 import CategoryList from './pages/teacher/category/category';
@@ -36,10 +35,8 @@ import AddCategory from './pages/teacher/category/createCategory';
 import AdminTeacher from './pages/adminTeacher/AdminTeacher';
 import AdminLearn from './pages/adminTeacher/AdminLearn';
 import FileTeacher from './pages/fileTeacher/FileTeacher';
-
 // import AdminTeacher from './pages/adminTeacher/AdminTeacher';
 // import AdminLearn from './pages/adminTeacher/AdminLearn';
-
 import TeacherPage from './pages/TeacherPage';
 import AdminLearnAdd from './pages/adminTeacher/AdminLearnAdd';
 import CoursePage from './pages/CoursePage';
@@ -76,8 +73,8 @@ import ExerciseSentences from './containers/Sentences/ExerciseSentences';
 import ExamSentences from './containers/Sentences/ExamSentences';
 import QuizTypeSelect from './components/quiz/QuizTypeSelect';
 import { PrivateRouteHomePage, PrivateRouteLearning } from './midlerware/PrivateRoute';
-import ListUserAgent from './pages/admin/userAgents/ListUserAgent';
-import EditUser from './pages/admin/Auth/EditUser';
+
+
 
 function App() {
   return (
@@ -167,20 +164,13 @@ function App() {
             <Route path='edit/:id' element={<Add />} />
           </Route>
 
-
           <Route path="contact" >
             <Route index element={<ListContact />} />
             <Route path='edit/:id' element={<EditContact />} />
           </Route>
-
-          <Route path="contact" >
-            <Route index element={<ListContact />} />
-            <Route path='edit/:id' element={<EditContact />} />
-          </Route>
-
           <Route path="user" >
-            <Route index element={<ListUser />} />
-            <Route path='add' element={<AddUser />} />
+            {/* <Route index element={<ListUser />} />
+            <Route path='add' element={<AddUser />} /> */}
             {/* <Route path='edit/:id' element={<EditUser />} /> */}
           </Route>
 
@@ -208,16 +198,8 @@ function App() {
             <Route index element={<ListListenWrite />} />
             <Route path='add' element={<FormListenWrite />} />
             <Route path=':id/edit' element={<FormListenWrite />} />
-          </Route>
-
-          <Route path="users-agent" >
-            <Route index element={<ListUserAgent />} />
-            {/* <Route path='add' element={<FormUserQuiz />} /> */}
-            {/* <Route path=':id/edit' element={<FormUserQuiz />} /> */}
-          </Route>
-          
+          </Route>  
         </Route>
-
         <Route path='/test' element={<TestPage />}> </Route>
         <Route path='/test2' element={<TestPage2 />}> </Route>
         <Route path='/signin' element={<SignIn />}> </Route>

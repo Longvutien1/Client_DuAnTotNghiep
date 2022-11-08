@@ -15,7 +15,7 @@ import {
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getClassById } from "../../../api/class";
-import { getListUser } from "../../../api/user";
+import { ListUser } from "../../../api/user";
 import {
   createClass,
   getClassByIdSlide,
@@ -183,7 +183,7 @@ const AdminClassList = (props) => {
   };
   const [options, setOption] = useState<any[]>([]);
   const getDataUser = async () => {
-    const { data } = await getListUser();
+    const { data } = await ListUser();
     if (data && data.length > 0) {
       setOption(
         data.map((item: any) => ({
